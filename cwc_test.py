@@ -2,6 +2,10 @@ import discord
 from discord.ext import commands
 import yt_dlp
 import asyncio
+import os
+
+token = os.getenv('DISCORD_BOT_TOKEN')
+
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
@@ -102,6 +106,6 @@ async def status(ctx):
 async def leave(ctx):
     await ctx.voice_client.disconnect()
 
-bot.run('MTE2NDkxMzg4NjIxOTIyMzEyMQ.GRXm84.EW__-RcjNkF1G626gXGMsftPxxO2n4w2FVwuog')
+bot.run(token)
 
 
